@@ -1,39 +1,40 @@
 //box user choice
-let userChoice = prompt("Do you choose rock, paper or scissors?");
+let playerSelection = prompt("Do you choose rock, paper or scissors?");
 
 //randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
-let computerPlay = Math.random();
-if (computerPlay < 0.34) {
-  computerPlay = "rock";
-} else if (computerPlay <= 0.67) {
-  computerPlay = "paper";
-} else {
-  computerPlay = "scissors";
-}
-
-console.log(computerPlay);
+let computerSelection = Math.random();
+let results = function computerResult() {
+  if (computerSelection < 0.34) {
+    return "rock";
+  } else if (computerSelection <= 0.67) {
+    return "paper";
+  } else {
+    return "scissors";
+  }
+  console.log(computerResult());
+};
 
 //compare results between user and computer
-let compare = function (userChoice, computerPlaypay) {
-  if (userChoice === computerPlaypay) {
+function compare(playerSelection, results) {
+  if (playerSelection === results) {
     return "The result is a tie!";
-  } else if (userChoice === "rock") {
-    if (computerPlaypay === "scissors") {
-      return "rock wins";
-    } else if (computerPlaypay === "paper") {
-      return "paper wins";
+  } else if (playerSelection === "rock") {
+    if (results === "scissors") {
+      return "You won rock beats scissors";
+    } else if (results === "paper") {
+      return "You lose paper beats rock";
     }
-  } else if (userChoice === "paper") {
-    if (computerPlaypay === "scissors") {
-      return "scissors win";
-    } else if (computerPlaypay === "rock") {
-      return "paper wins";
+  } else if (playerSelection === "paper") {
+    if (results === "scissors") {
+      return "You lose scissors beats paper";
+    } else if (results === "rock") {
+      return "You won paper beats rock";
     }
-  } else if (userChoice === "scissors") {
-    if (computerPlaypay === "paper") {
-      return "scissors win";
-    } else if (computerPlaypay === "rock") {
-      return "rock wins";
+  } else if (playerSelection === "scissors") {
+    if (results === "paper") {
+      return "You won scissors beats paper";
+    } else if (results === "rock") {
+      return "You lose rock beats scissors";
     }
   }
-};
+}
