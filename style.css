@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+  margin-top: 7rem;
+}
+#player-game {
+  margin: 5rem 10rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+#get-user-choice {
+  border: 1px red solid;
+  border-radius: 5px;
+  padding: 0 1rem;
+  color: blue;
+}
+#get-user-choice:hover {
+  border: 1px blue solid;
+  color: red;
+}
+
+#get-computer-choice {
+  border: 1px blue solid;
+  border-radius: 5px;
+  padding: 0 1rem;
+  color: red;
+}
